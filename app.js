@@ -3,7 +3,8 @@
  * Module dependencies.
  */
 
-var express = require('express'),
+var fs = require('fs'),
+    express = require('express'),
     hn = require('./lib/hn');
 
 var app = module.exports = express.createServer(),
@@ -33,9 +34,21 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/top.json', function(req, res){
-  hn.topFeed.getJSON(function(json) {
-    res.send(json);
+app.get('/top.json', function(req, res, next){
+  fs.stat('./public/top.json', function(err, stat) {
+    // Cache miss or cache has expired, load it from RSS feed
+    if((err && err.code === 'ENOENT') ||
+       (stat.mtime.getTime() < ((new Date()).getTime() - (3*1000*60)))) {
+      console.log('yoyoyuoyo');
+      hn.topFeed.getJSON(function(json) {
+        res.contentType('application/json');
+        res.send(json);
+        fs.writeFile('./public/top.json', json);
+      });
+    }
+    else {
+      next();
+    }
   });
 });
 
