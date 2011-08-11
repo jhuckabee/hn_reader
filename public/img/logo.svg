@@ -15,7 +15,10 @@
    id="svg5531"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 14">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/josh/Development/personal/js/hn/public/img/logo.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs5533">
     <linearGradient
@@ -144,6 +147,39 @@
        r="64"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(-2.9390682,0.0120107,-0.00641394,-1.5695393,-13.715166,2405.533)" />
+    <filter
+       id="filter6457"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur6459"
+         in="SourceAlpha"
+         stdDeviation="1"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix6461"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0 " />
+      <feOffset
+         id="feOffset6463"
+         in="bluralpha"
+         dx="1"
+         dy="1"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge6465">
+        <feMergeNode
+           id="feMergeNode6467"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode6469"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -153,7 +189,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="33.940579"
+     inkscape:cx="105.36915"
      inkscape:cy="79.593898"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -200,28 +236,16 @@
        ry="15" />
     <text
        xml:space="preserve"
-       style="font-size:112.22865295px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter6206);font-family:Bitstream Vera Sans"
-       x="2.1138966"
-       y="961.08191"
-       id="text6076"
+       style="font-size:90px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter6457);font-family:Switzera ADF Extra Bold;-inkscape-font-specification:'Switzera ADF Extra Bold,'"
+       x="13.531748"
+       y="835.30951"
+       id="text6453"
        sodipodi:linespacing="125%"
-       transform="matrix(0.9510414,0,0,1.1324249,0,-70.732036)"><tspan
+       transform="matrix(0.81973454,0,0,1.2434838,-0.70573773,-9.181712)"><tspan
          sodipodi:role="line"
-         x="2.1138966"
-         y="961.08191"
-         id="tspan6080"
-         style="font-size:95.46469116px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Aller;-inkscape-font-specification:Aller">HN</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:28.00291061px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Aller Light;-inkscape-font-specification:'Aller Light,'"
-       x="4.7440624"
-       y="1440.272"
-       id="text6282"
-       sodipodi:linespacing="125%"
-       transform="scale(1.3872861,0.72083185)"><tspan
-         sodipodi:role="line"
-         id="tspan6284"
-         x="4.7440624"
-         y="1440.272">reader</tspan></text>
+         id="tspan6455"
+         x="13.531748"
+         y="835.30951"
+         style="font-size:90px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:Switzera ADF Extra Bold;-inkscape-font-specification:'Switzera ADF Extra Bold,'">HN</tspan></text>
   </g>
 </svg>

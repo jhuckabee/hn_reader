@@ -1,7 +1,7 @@
 {
   "name": "Hackers News Reader",
   "description": "Simplistic Reader for Hacker News",
-  "version": "2",
+  "version": "4",
   "app": {
     "urls": [
       "http://hn_reader.joshhuckabee.com/"
