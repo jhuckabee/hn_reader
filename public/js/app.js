@@ -31,11 +31,20 @@ $(function() {
 
     itemsLoaded: function() {
       refreshIcon.removeClass('disabled');
+    },
+
+    resizeItemsList: function() {
+      $('#items').css('height', $(window).height()-30);
     }
 
   };
 
+  HN.resizeItemsList();
   HN.loadItems();
+
+  $(window).resize(function() {
+      HN.resizeItemsList();
+  });
 
   $('#refresh').click(function(e) {
     e.preventDefault();

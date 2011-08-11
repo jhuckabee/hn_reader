@@ -112,15 +112,9 @@ a:hover { color: #036; }
 #itemList {
   width: 300px;
   height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   background: #F5F5F5;
   float: left;
-}
-
-#itemSpacer {
-  width: 300px;
-  height: 30px;
 }
 
 #itemListToolbar {
@@ -130,8 +124,9 @@ a:hover { color: #036; }
   width: 300px;
   height: 24px;
   box-shadow: -1px 3px 3px #888;
-  background: -webkit-linear-gradient(top, #DDD 0%, #BBB 100%); 
   padding: 3px 0;
+  background: -moz-linear-gradient(top, #DDD 0%, #BBB 100%);
+  background: -webkit-linear-gradient(top, #DDD 0%, #BBB 100%); 
 }
 
 #itemListToolbar #links {
@@ -179,9 +174,17 @@ a:hover { color: #036; }
 }
 
 #itemListToolbar #links a.active {
-  background: -webkit-linear-gradient(top, #666 0%, #444 100%); 
   color: #DDD;
   text-shadow: none;
+  background: -webkit-linear-gradient(top, #666 0%, #444 100%); 
+  background: -moz-linear-gradient(top, #666 0%, #444 100%); 
+}
+
+#items {
+  position: absolute;
+  top: 30px;
+  width: 300px;
+  overflow-y: scroll;
 }
 
 .item {
@@ -255,7 +258,6 @@ a:hover { color: #036; }
   padding: 5px;
   background: #F5F5F5;
 }
-
 
 body.intro .introtext{
   width: 400px;
