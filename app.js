@@ -20,7 +20,9 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(gzippo.staticGzip(__dirname + '/public'));
+  app.use(gzippo.staticGzip(__dirname + '/public', {
+    contentTypeMatch: /text|javascript/
+  }));
 });
 
 app.configure('development', function(){
