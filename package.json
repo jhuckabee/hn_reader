@@ -1,0 +1,21 @@
+{
+  "author": "Josh Huckabee <joshhuckabee@gmail.com> (http://joshhuckabee.com)",
+  "name": "hn",
+  "description": "pretty hn news reader",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jhuckabee/hn.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "v0.4.10"
+  },
+  "dependencies": {
+    "libxmljs":       "0.4.2",
+    "request":        "2.0.2",
+    "express":        "2.4.3",
+    "connect":        "1.6.0"
+  },
+  "devDependencies": {}
+}

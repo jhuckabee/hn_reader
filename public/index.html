@@ -1,0 +1,60 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]--> <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]--> <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]--> <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>HN</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="css/1a54bc450d914fe4c4b3febb3a38bc4d.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div id="container">
+    <div id="itemList" class="scrollbar">
+      <div id="itemListToolbar">
+        <div id="links">
+          <a href="#top" id="top" class="active">Top</a>
+          <a href="http://news.ycombinator.com/newest" id="news">New</a>
+          <span class="right">
+            <a id="refresh" href="#refresh" title="Refresh">
+              <img id="refresh-icon" src="/img/01-refresh.png" alt="Refresh" />
+            </a>
+          </span>
+        </div>
+      </div>
+      <div id="itemSpacer"></div>
+      <div id="items"></div>
+    </div>
+    <div id="itemDetail">
+      <iframe id="itemContent" src="intro.html"></iframe>
+    </div>
+  </div>
+  <div id="loadingIndicator" style="display:none;">Loading...</div>
+  <script id="item-template" type="text/x-handlebars-template">
+    <div class="item">
+      <h2><a href="{{link}}">{{title}}</a></h2>
+      <div class="detail">
+        <div class="right">
+          <span class="site-link"><a href="{{link}}" target="blank" title="Go to page"><img src="/img/113-navigation.png" height="15" /></a></span>
+          <span class="comments"><a href="{{comments}}" title="View Comments"><img src="/img/08-chat.png" height="15" /></a></span>
+        </div>
+        <span class="site">{{host}}</span>
+      </div>
+    </div>
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>
+  <script src="js/handlebars.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

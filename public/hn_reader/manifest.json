@@ -1,0 +1,17 @@
+{
+  "name": "Hackers News Reader",
+  "description": "Simplistic Reader for Hacker News",
+  "version": "2",
+  "app": {
+    "urls": [
+      "http://hn_reader.joshhuckabee.com/"
+    ],
+    "launch": {
+      "web_url": "http://hn_reader.joshhuckabee.com/"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": []
+}
