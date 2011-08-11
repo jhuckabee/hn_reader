@@ -35,15 +35,15 @@ app.configure('production', function(){
 // Routes
 
 app.get('/top.json', function(req, res, next){
-  fs.stat('./public/top.json', function(err, stat) {
+  var cacheFile = __dirname + '/public/top.json';
+  fs.stat(cacheFile, function(err, stat) {
     // Cache miss or cache has expired, load it from RSS feed
     if((err && err.code === 'ENOENT') ||
        (stat.mtime.getTime() < ((new Date()).getTime() - (3*1000*60)))) {
-      console.log('yoyoyuoyo');
       hn.topFeed.getJSON(function(json) {
         res.contentType('application/json');
         res.send(json);
-        fs.writeFile('./public/top.json', json);
+        fs.writeFile(cacheFile, json);
       });
     }
     else {
