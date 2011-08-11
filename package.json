@@ -17,5 +17,7 @@
     "express":        "2.4.3",
     "connect":        "1.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "clean-css":      "0.2.4"
+  }
 }
