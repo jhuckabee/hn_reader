@@ -6,6 +6,15 @@ $(function() {
 
   var HN = {
 
+    selectedFeed: 'top',
+
+    selectFeed: function(feed) {
+      this.selectedFeed = feed;
+      this.loadItems();
+      $('#itemListToolbar a').removeClass('active');
+      $('#'+feed).addClass('active');
+    },
+
     iframeLoadComplete: function() {
       $('#loadingIndicator').hide();
     },
@@ -16,7 +25,7 @@ $(function() {
 
     loadItems: function() {
       this.loadingItems();
-      $.getJSON('/top.json', function(items) {
+      $.getJSON('/'+HN.selectedFeed+'.json', function(items) {
         itemList.html('');
         items.forEach(function(item) {
           itemList.append(itemTemplate(item));
@@ -51,13 +60,26 @@ $(function() {
     HN.loadItems();
   });
 
-  $('.item').live('click', function(e) {
-    HN.iframeLoadBegin();
-    var div = $(e.currentTarget);
-    $('.selected').removeClass('selected');
-    div.addClass('selected');
+  $('#top').click(function(e) {
     e.preventDefault();
-    $('#itemContent').attr('src', div.find("h2 a").attr('href'));
+    HN.selectFeed('top');
+  });
+
+  $('#newest').click(function(e) {
+    e.preventDefault();
+    HN.selectFeed('newest');
+  });
+
+  $('.item').live('click', function(e) {
+    // Ignore this event for site link clicks which should open in a new tab
+    if(!$(e.target).parent().hasClass('go_to_site')) {
+      HN.iframeLoadBegin();
+      var div = $(e.currentTarget);
+      $('.selected').removeClass('selected');
+      div.addClass('selected');
+      e.preventDefault();
+      $('#itemContent').attr('src', div.find("h2 a").attr('href'));
+    }
   });
   
   $('.item .comments a').live('click', function(e) {
@@ -68,11 +90,6 @@ $(function() {
     div.addClass('selected');
     $('#itemContent').attr('src', target.attr('href'));
     return false;
-  });
-
-  $('.item .site-link a').live('click', function(e) {
-    var target = $(e.currentTarget);
-    window.location = target.attr('href');
   });
 
   $('#itemContent').load(function(e) {

@@ -3,8 +3,7 @@
  * Module dependencies.
  */
 
-var fs = require('fs'),
-    express = require('express'),
+var express = require('express'),
     gzippo = require('gzippo'),
     hn = require('./lib/hn');
 
@@ -14,13 +13,14 @@ var app = module.exports = express.createServer(),
 // Configuration
 
 app.configure(function(){
+  app.set('public', __dirname + '/public');
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.logger());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(gzippo.staticGzip(__dirname + '/public', {
+  app.use(gzippo.staticGzip(app.set('public'), {
     contentTypeMatch: /text|javascript/
   }));
 });
@@ -35,27 +35,7 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-// Routes
-
-app.get('/top.json', function(req, res, next){
-  var cacheFile = __dirname + '/public/top.json';
-  fs.stat(cacheFile, function(err, stat) {
-    // Cache miss or cache has expired, load it from RSS feed
-    if((err && err.code === 'ENOENT') ||
-       (stat.mtime.getTime() < ((new Date()).getTime() - (3*1000*60)))) {
-      hn.topFeed.getJSON(function(json) {
-        res.contentType('application/json');
-        res.send(json);
-        fs.writeFile(cacheFile, json);
-      });
-    }
-    else {
-      next();
-    }
-  });
-});
-
-// Only listen on $ node app.js
+hn.setup(app);
 
 if (!module.parent) {
   app.listen(PORT);
