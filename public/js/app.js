@@ -9,7 +9,11 @@ $(function() {
     iframeUnfriendlyHosts: [
       'nytimes.com',
       'twitch.tv',
-      'groups.google.com'
+      'groups.google.com',
+      'plus.google.com',
+      'flickr.com',
+      'market.android.com',
+      'bmj.com'
     ],
 
     frameFriendlyHost: function(href) {
