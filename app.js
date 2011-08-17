@@ -32,7 +32,7 @@ app.configure('development', function(){
 });
 
 app.configure('production', function(){
-  PORT = 8000;
+  PORT = 80;
   app.use(express.errorHandler()); 
 });
 

@@ -1,6 +1,6 @@
 cache
 public/top.json
 public/newest.json
-public/compressed
-public/css/compiled
-public/js/compiled
+public/compressed/*
+public/css/compiled/*
+public/js/compiled/*
