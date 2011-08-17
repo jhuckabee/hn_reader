@@ -119,7 +119,7 @@ $(function() {
         $('#itemContent').attr('src', href);
       }
       else {
-        $('#itemContent').attr('src', '/frame_unfriendly_host.html');
+        $('#itemContent').attr('src', '/frame_unfriendly_host');
         setTimeout(function() {
           window.open(href);
         }, 2000);

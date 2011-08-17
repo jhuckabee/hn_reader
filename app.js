@@ -5,6 +5,7 @@
 
 var express = require('express'),
     gzippo = require('gzippo'),
+    assets = require('./lib/assets'),
     hn = require('./lib/hn');
 
 var app = module.exports = express.createServer(),
@@ -31,10 +32,24 @@ app.configure('development', function(){
 });
 
 app.configure('production', function(){
-  PORT = 80;
+  PORT = 8000;
   app.use(express.errorHandler()); 
 });
 
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.get('/intro', function(req, res) {
+  res.render('intro');
+});
+
+app.get('/frame_unfriendly_host', function(req, res) {
+  res.render('frame_unfriendly_host');
+});
+
+assets.addHandler(app);
 hn.setup(app);
 
 if (!module.parent) {

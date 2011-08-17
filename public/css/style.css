@@ -206,13 +206,8 @@ a:hover { color: #036; }
   background: #E5E5E5;
 }
 
-.frame_unfriendly_host {
-  background: #CCC;
-  text-shadow: none;
-}
-.frame_unfriendly_host:hover {
-  background: #CCC;
-}
+.frame_unfriendly_host { }
+.frame_unfriendly_host:hover { } 
 
 .selected,
 .selected:hover {
@@ -228,10 +223,7 @@ a:hover { color: #036; }
   color: #666;
 }
 
-.frame_unfriendly_host h2 a {
-  color: #F5F5F5;
-  text-shadow: none;
-}
+.frame_unfriendly_host h2 a { }
 
 .selected h2 a {
   color: #444;
@@ -244,9 +236,8 @@ a:hover { color: #036; }
   color: #AAA;
 }
 
-.frame_unfriendly_host .detail .site {
-  color: #EEE;
-}
+.frame_unfriendly_host .detail .site { }
+
 .selected .detail .site {
   color: #999;
 }
@@ -282,17 +273,18 @@ a:hover { color: #036; }
   background: #F5F5F5;
 }
 
-body.intro .introtext{
+.dialog {
   width: 400px;
   margin: 50px auto;
   padding: 20px 10px;
   background: #F5F5F5;
 }
 
-body.intro .introtext h2 {
+.dialog h2 {
   font-size: 24px;
 }
-body.intro .introtext p {
+
+.dialog p {
   margin-top: 10px;
 }
 
