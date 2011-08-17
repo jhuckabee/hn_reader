@@ -6,6 +6,34 @@ $(function() {
 
   var HN = {
 
+    iframeUnfriendlyHosts: [
+      'nytimes.com',
+      'twitch.tv',
+      'groups.google.com'
+    ],
+
+    frameFriendlyHost: function(href) {
+      var ret = true;;
+      this.iframeUnfriendlyHosts.forEach(function(v, i) {
+        if(href.match(v)) {
+          ret = false;
+          return;
+        }
+      });
+      return ret;
+    },
+    
+    markFrameUnfriendlyLinks: function() {
+      var div, href;
+      $('.item').each(function(i, item) {
+        div = $(item);
+        href = div.find("h2 a").attr('href');
+        if(!HN.frameFriendlyHost(href)) {
+          div.addClass("frame_unfriendly_host");
+        }
+      });
+    },
+
     selectedFeed: 'top',
 
     selectFeed: function(feed) {
@@ -31,6 +59,7 @@ $(function() {
           itemList.append(itemTemplate(item));
         });
         HN.itemsLoaded();
+        HN.markFrameUnfriendlyLinks();
       });
     },
 
@@ -73,15 +102,26 @@ $(function() {
   $('.item').live('click', function(e) {
     // Ignore this event for site link clicks which should open in a new tab
     if(!$(e.target).parent().hasClass('go_to_site')) {
+      var div = $(e.currentTarget),
+          href = div.find("h2 a").attr('href');
+
+      e.preventDefault();
+
       HN.iframeLoadBegin();
-      var div = $(e.currentTarget);
       $('.selected').removeClass('selected');
       div.addClass('selected');
-      e.preventDefault();
-      $('#itemContent').attr('src', div.find("h2 a").attr('href'));
+      if(HN.frameFriendlyHost(href)) {
+        $('#itemContent').attr('src', href);
+      }
+      else {
+        $('#itemContent').attr('src', '/frame_unfriendly_host.html');
+        setTimeout(function() {
+          window.open(href);
+        }, 2000);
+      }
     }
   });
-  
+
   $('.item .comments a').live('click', function(e) {
     e.stopPropagation();
     var target = $(e.currentTarget);
@@ -95,4 +135,5 @@ $(function() {
   $('#itemContent').load(function(e) {
     HN.iframeLoadComplete();
   });
+
 });

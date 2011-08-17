@@ -206,6 +206,14 @@ a:hover { color: #036; }
   background: #E5E5E5;
 }
 
+.frame_unfriendly_host {
+  background: #CCC;
+  text-shadow: none;
+}
+.frame_unfriendly_host:hover {
+  background: #CCC;
+}
+
 .selected,
 .selected:hover {
   background: #EEE;
@@ -219,6 +227,12 @@ a:hover { color: #036; }
   text-decoration: none;
   color: #666;
 }
+
+.frame_unfriendly_host h2 a {
+  color: #F5F5F5;
+  text-shadow: none;
+}
+
 .selected h2 a {
   color: #444;
 }
@@ -230,6 +244,9 @@ a:hover { color: #036; }
   color: #AAA;
 }
 
+.frame_unfriendly_host .detail .site {
+  color: #EEE;
+}
 .selected .detail .site {
   color: #999;
 }
