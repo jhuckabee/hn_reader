@@ -8,11 +8,12 @@ $(function() {
 
     iframeUnfriendlyHosts: [
       'nytimes.com',
-      'twitch.tv',
       'groups.google.com',
       'plus.google.com',
+      'stackexchange.com',
       'flickr.com',
       'market.android.com',
+      'twitch.tv',
       'bmj.com'
     ],
 
