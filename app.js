@@ -49,7 +49,7 @@ app.get('/frame_unfriendly_host', function(req, res) {
   res.render('frame_unfriendly_host');
 });
 
-assets.addHandler(app);
+assets.setup(app);
 hn.setup(app);
 
 if (!module.parent) {
