@@ -1,5 +1,4 @@
 var cluster = require('cluster'),
-    hn = require('./lib/hn'),
     util = require('util');
 
 cluster('./lib/app.js')
