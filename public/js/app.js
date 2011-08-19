@@ -11,6 +11,7 @@ $(function() {
       'groups.google.com',
       'plus.google.com',
       'stackexchange.com',
+      'stackoverflow.com',
       'flickr.com',
       'market.android.com',
       'twitch.tv',
