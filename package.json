@@ -18,7 +18,7 @@
     "connect":        "1.6.0",
     "ams":            "0.0.10",
     "cluster":        "0.7.1",
-    "gzippo":         "0.0.5"
+    "gzippo":         "0.0.4"
   },
   "devDependencies": {
   }
