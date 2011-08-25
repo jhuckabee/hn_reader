@@ -84,6 +84,7 @@ $(function() {
 
   };
 
+  $('#itemContent').attr('src', '/intro');
   HN.resizeItemsList();
   HN.loadItems();
 
