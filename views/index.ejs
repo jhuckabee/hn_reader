@@ -6,7 +6,7 @@
         <a href="http://news.ycombinator.com/newest" id="newest">New</a>
         <span class="right">
           <a id="refresh" href="#refresh" title="Refresh">
-            <img id="refresh-icon" src="/img/01-refresh.png" alt="Refresh" />
+            <%- icon('/img/01-refresh.png', {alt: 'Refresh', height: '20', width: '20'}) %>
           </a>
         </span>
       </div>
@@ -23,8 +23,8 @@
     <h2><a href="{{link}}" target="_blank" class="go_to_site">{{title}}</a></h2>
     <div class="detail">
       <div class="right">
-        <span class="site-link"><a href="{{link}}" target="_blank" title="Go to page" class="go_to_site"><img src="/img/113-navigation.png" height="15" /></a></span>
-        <span class="comments"><a href="{{comments}}" title="View Comments"><img src="/img/08-chat.png" height="15" /></a></span>
+        <span class="site-link"><a href="{{link}}" target="_blank" title="Go to page" class="go_to_site"><%- icon('/img/113-navigation.png', {alt: 'Go to Site', height: '15', width: '15'}) %></a></span>
+        <span class="comments"><a href="{{comments}}" title="View Comments"><%- icon('/img/08-chat.png', {height: '15', width: '18', alt: 'View Comments'}) %></a></span>
       </div>
       <span class="site">{{host}}</span>
     </div>
