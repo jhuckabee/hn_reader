@@ -15,7 +15,8 @@ $(function() {
       'flickr.com',
       'market.android.com',
       'twitch.tv',
-      'bmj.com'
+      'bmj.com',
+      'quirksmode.org'
     ],
 
     frameFriendlyHost: function(href) {
