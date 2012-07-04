@@ -84,12 +84,12 @@ $(function() {
 
   };
 
+  HN.loadItems();
   $('#itemContent').attr('src', '/intro');
   HN.resizeItemsList();
-  HN.loadItems();
 
   $(window).resize(function() {
-      HN.resizeItemsList();
+    HN.resizeItemsList();
   });
 
   $('#refresh').click(function(e) {
