@@ -29,7 +29,7 @@ $(function() {
       });
       return ret;
     },
-    
+
     markFrameUnfriendlyLinks: function() {
       var div, href;
       $('.item').each(function(i, item) {
